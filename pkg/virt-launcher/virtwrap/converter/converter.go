@@ -206,10 +206,12 @@ func Convert_v1_Disk_To_api_Disk(c *ConverterContext, diskDevice *v1.Disk, disk 
 		}
 	}
 	disk.Driver = &api.DiskDriver{
-		Name:  "qemu",
-		Cache: string(diskDevice.Cache),
-		IO:    string(diskDevice.IO),
+		Name:        "qemu",
+		Cache:       string(diskDevice.Cache),
+		IO:          string(diskDevice.IO),
+		ErrorPolicy: "stop",
 	}
+
 	if numQueues != nil && disk.Target.Bus == "virtio" {
 		disk.Driver.Queues = numQueues
 	}

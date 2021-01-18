@@ -30,9 +30,9 @@ import (
 	"time"
 
 	"github.com/spf13/pflag"
+	"k8s.io/apimachinery/pkg/types"
 	libvirt "libvirt.org/libvirt-go"
 
-	"k8s.io/apimachinery/pkg/types"
 	"k8s.io/apimachinery/pkg/util/wait"
 	utilwait "k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/apimachinery/pkg/watch"
@@ -122,7 +122,7 @@ func startDomainEventMonitoring(
 	virtShareDir string,
 	domainConn virtcli.Connection,
 	deleteNotificationSent chan watch.Event,
-	vmiUID types.UID,
+	vmi *v1.VirtualMachineInstance,
 	domainName string,
 	agentStore *agentpoller.AsyncAgentStore,
 	qemuAgentSysInterval time.Duration,
@@ -139,7 +139,7 @@ func startDomainEventMonitoring(
 		}
 	}()
 
-	err := notifier.StartDomainNotifier(domainConn, deleteNotificationSent, vmiUID, domainName, agentStore, qemuAgentSysInterval, qemuAgentFileInterval, qemuAgentUserInterval, qemuAgentVersionInterval)
+	err := notifier.StartDomainNotifier(domainConn, deleteNotificationSent, vmi, domainName, agentStore, qemuAgentSysInterval, qemuAgentFileInterval, qemuAgentUserInterval, qemuAgentVersionInterval)
 	if err != nil {
 		panic(err)
 	}
@@ -345,7 +345,7 @@ func main() {
 		panic(err)
 	}
 
-	vm := v1.NewVMIReferenceFromNameWithNS(*namespace, *name)
+	vm := v1.NewVMIReferenceWithUUID(*namespace, *name, types.UID(*uid))
 
 	// Initialize local and shared directories
 	initializeDirs(*virtShareDir, *ephemeralDiskDir, *containerDiskDir, *hotplugDiskDir, *uid)
@@ -410,7 +410,7 @@ func main() {
 
 	events := make(chan watch.Event, 2)
 	// Send domain notifications to virt-handler
-	startDomainEventMonitoring(notifier, *virtShareDir, domainConn, events, vm.UID, domainName, &agentStore, *qemuAgentSysInterval, *qemuAgentFileInterval, *qemuAgentUserInterval, *qemuAgentVersionInterval)
+	startDomainEventMonitoring(notifier, *virtShareDir, domainConn, events, vm, domainName, &agentStore, *qemuAgentSysInterval, *qemuAgentFileInterval, *qemuAgentUserInterval, *qemuAgentVersionInterval)
 
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt,

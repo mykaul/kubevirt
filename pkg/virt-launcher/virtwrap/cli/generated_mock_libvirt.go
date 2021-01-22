@@ -5,6 +5,7 @@ package cli
 
 import (
 	gomock "github.com/golang/mock/gomock"
+	libvirt "libvirt.org/libvirt-go"
 	libvirt_go "libvirt.org/libvirt-go"
 
 	stats "kubevirt.io/kubevirt/pkg/virt-launcher/virtwrap/stats"
@@ -249,6 +250,16 @@ func NewMockVirDomain(ctrl *gomock.Controller) *MockVirDomain {
 
 func (_m *MockVirDomain) EXPECT() *_MockVirDomainRecorder {
 	return _m.recorder
+}
+func (_m *MockVirDomain) GetDiskErrors(flags uint32) ([]libvirt.DomainDiskError, error) {
+	ret := _m.ctrl.Call(_m, "GetDiskErrors")
+	ret0, _ := ret[0].([]libvirt.DomainDiskError)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+func (_mr *_MockVirDomainRecorder) GetDiskErrors(flags uint32) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "GetDiskErrors", flags)
 }
 
 func (_m *MockVirDomain) GetState() (libvirt_go.DomainState, int, error) {

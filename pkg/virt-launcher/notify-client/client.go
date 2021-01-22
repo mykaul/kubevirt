@@ -240,8 +240,10 @@ func eventCallback(c cli.Connection, domain *api.Domain, libvirtEvent libvirtEve
 		log.Log.Infof("kubevirt domain status: %v(%v):%v(%v)", domain.Status.Status, status, domain.Status.Reason, reason)
 	}
 
+	log.Log.Infof("XXX Status:%s", domain.Status.Reason)
 	switch domain.Status.Reason {
 	case api.ReasonNonExistent:
+		log.Log.Infof("XXX ReasonNonExistent")
 		now := metav1.Now()
 		domain.ObjectMeta.DeletionTimestamp = &now
 		watchEvent := watch.Event{Type: watch.Modified, Object: domain}
@@ -254,6 +256,7 @@ func eventCallback(c cli.Connection, domain *api.Domain, libvirtEvent libvirtEve
 		}
 		for _, disk := range domainDisksWithErrors {
 			volumeName := util.GetVolumeNameByTarget(domain, disk.Disk)
+			log.Log.Infof("XXX IO error")
 			var reasonError string
 			switch disk.Error {
 			case libvirt.DOMAIN_DISK_ERROR_NONE:
@@ -269,6 +272,7 @@ func eventCallback(c cli.Connection, domain *api.Domain, libvirtEvent libvirtEve
 			}
 		}
 	default:
+		log.Log.Infof("XXX default")
 		if libvirtEvent.Event != nil {
 			if libvirtEvent.Event.Event == libvirt.DOMAIN_EVENT_DEFINED && libvirt.DomainEventDefinedDetailType(libvirtEvent.Event.Detail) == libvirt.DOMAIN_EVENT_DEFINED_ADDED {
 				event := watch.Event{Type: watch.Added, Object: domain}

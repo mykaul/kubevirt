@@ -64,9 +64,11 @@ require (
 	k8s.io/api v0.20.2
 	k8s.io/apiextensions-apiserver v0.20.2
 	k8s.io/apimachinery v0.20.2
+	k8s.io/cli-runtime v0.20.2
 	k8s.io/client-go v12.0.0+incompatible
 	k8s.io/kube-aggregator v0.19.0-rc.2
 	k8s.io/kube-openapi v0.0.0-20210113233702-8566a335510f
+	k8s.io/kubectl v0.0.0-00010101000000-000000000000
 	k8s.io/utils v0.0.0-20201110183641-67b214c5f920
 	kubevirt.io/client-go v0.0.0-00010101000000-000000000000
 	kubevirt.io/containerized-data-importer v1.31.0

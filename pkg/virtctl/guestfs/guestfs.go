@@ -292,7 +292,7 @@ func createLibguestfsPod(pvc, image, cmd string, args []string, kvm, isBlock boo
 							Value: "direct",
 						},
 					},
-					ImagePullPolicy: corev1.PullIfNotPresent,
+					ImagePullPolicy: corev1.PullAlways,
 					Stdin:           true,
 					TTY:             true,
 					Resources:       resources,

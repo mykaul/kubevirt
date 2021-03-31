@@ -72,7 +72,11 @@ bazel run \
     --config=${ARCHITECTURE} \
     //:bazeldnf -- rpmtree --public --name libguestfs-tools \
     $basesystem \
-    libguestfs-tools
+    libguestfs \
+    libguestfs-tools-c \
+    kernel-core \
+    kernel-modules \
+    dracut
 
 # remove all RPMs which are no longer referenced by a rpmtree
 bazel run \

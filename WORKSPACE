@@ -1268,6 +1268,17 @@ rpm(
 )
 
 rpm(
+    name = "ebtables-legacy-0__2.0.11-5.fc32.x86_64",
+    sha256 = "2eca40e72fdd3ea19d22f00c127c4d166eaf7687cc0a8c1056ae3a6264cda56d",
+    urls = [
+        "https://ftp.halifax.rwth-aachen.de/fedora/linux/releases/32/Everything/x86_64/os/Packages/e/ebtables-legacy-2.0.11-5.fc32.x86_64.rpm",
+        "https://ftp.fau.de/fedora/linux/releases/32/Everything/x86_64/os/Packages/e/ebtables-legacy-2.0.11-5.fc32.x86_64.rpm",
+        "https://mirror.dogado.de/fedora/linux/releases/32/Everything/x86_64/os/Packages/e/ebtables-legacy-2.0.11-5.fc32.x86_64.rpm",
+        "https://ftp-stud.hs-esslingen.de/pub/fedora/linux/releases/32/Everything/x86_64/os/Packages/e/ebtables-legacy-2.0.11-5.fc32.x86_64.rpm",
+    ],
+)
+
+rpm(
     name = "edk2-ovmf-0__20200801stable-1.fc32.x86_64",
     sha256 = "220848c197bd0e464172b94a4af9b681f788a916976d05036825241e1aaf753a",
     urls = [
@@ -2176,17 +2187,6 @@ rpm(
 )
 
 rpm(
-    name = "hwdata-0__0.344-1.fc32.ppc64le",
-    sha256 = "0cfdce4eb924391fabbe9896dd7c71daf130657c4f5d110dc91269de4ae198f0",
-    urls = [
-        "https://ftp-stud.hs-esslingen.de/pub/fedora-secondary/updates/32/Everything/ppc64le/Packages/h/hwdata-0.344-1.fc32.noarch.rpm",
-        "https://mirrors.dotsrc.org/fedora-buffet/fedora-secondary/updates/32/Everything/ppc64le/Packages/h/hwdata-0.344-1.fc32.noarch.rpm",
-        "https://mirror.yandex.ru/fedora-secondary/updates/32/Everything/ppc64le/Packages/h/hwdata-0.344-1.fc32.noarch.rpm",
-        "https://fr2.rpmfind.net/linux/fedora-secondary/updates/32/Everything/ppc64le/Packages/h/hwdata-0.344-1.fc32.noarch.rpm",
-    ],
-)
-
-rpm(
     name = "hwdata-0__0.344-1.fc32.x86_64",
     sha256 = "0cfdce4eb924391fabbe9896dd7c71daf130657c4f5d110dc91269de4ae198f0",
     urls = [
@@ -2194,6 +2194,17 @@ rpm(
         "https://mirrors.dotsrc.org/fedora-buffet/fedora/linux/updates/32/Everything/x86_64/Packages/h/hwdata-0.344-1.fc32.noarch.rpm",
         "https://ftp.acc.umu.se/mirror/fedora/linux/updates/32/Everything/x86_64/Packages/h/hwdata-0.344-1.fc32.noarch.rpm",
         "https://ftp.lip6.fr/ftp/pub/linux/distributions/fedora/updates/32/Everything/x86_64/Packages/h/hwdata-0.344-1.fc32.noarch.rpm",
+    ],
+)
+
+rpm(
+    name = "hwdata-0__0.345-1.fc32.ppc64le",
+    sha256 = "3f83346676a68c53a004dec91b1e38c5222b6a2f100fa5a8b8464cd7d4bce8dd",
+    urls = [
+        "https://download-ib01.fedoraproject.org/pub/fedora-secondary/updates/32/Everything/ppc64le/Packages/h/hwdata-0.345-1.fc32.noarch.rpm",
+        "https://fedora-secondary.mirrors.theom.nz/updates/32/Everything/ppc64le/Packages/h/hwdata-0.345-1.fc32.noarch.rpm",
+        "https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora-secondary/updates/32/Everything/ppc64le/Packages/h/hwdata-0.345-1.fc32.noarch.rpm",
+        "https://download-cc-rdu01.fedoraproject.org/pub/fedora-secondary/updates/32/Everything/ppc64le/Packages/h/hwdata-0.345-1.fc32.noarch.rpm",
     ],
 )
 
@@ -2276,17 +2287,6 @@ rpm(
         "https://ftp-stud.hs-esslingen.de/pub/fedora/linux/updates/32/Everything/x86_64/Packages/i/iptables-libs-1.8.4-9.fc32.x86_64.rpm",
         "https://ftp.fau.de/fedora/linux/updates/32/Everything/x86_64/Packages/i/iptables-libs-1.8.4-9.fc32.x86_64.rpm",
         "https://storage.googleapis.com/builddeps/dcf038adbb690e6aa3dcc020576eccf1ee3eeecb0cddd3011fa5f99e85c8bf3a",
-    ],
-)
-
-rpm(
-    name = "iptables-nft-0__1.8.4-9.fc32.x86_64",
-    sha256 = "b81b7935915e07fe9fec3cfb0a25c27baa051ad9ee5a3f3a0ffd22b1615eccb9",
-    urls = [
-        "https://ftp.byfly.by/pub/fedoraproject.org/linux/updates/32/Everything/x86_64/Packages/i/iptables-nft-1.8.4-9.fc32.x86_64.rpm",
-        "https://fedora.cu.be/linux/updates/32/Everything/x86_64/Packages/i/iptables-nft-1.8.4-9.fc32.x86_64.rpm",
-        "https://ftp.lip6.fr/ftp/pub/linux/distributions/fedora/updates/32/Everything/x86_64/Packages/i/iptables-nft-1.8.4-9.fc32.x86_64.rpm",
-        "https://mirror.yandex.ru/fedora/linux/updates/32/Everything/x86_64/Packages/i/iptables-nft-1.8.4-9.fc32.x86_64.rpm",
     ],
 )
 
@@ -2459,6 +2459,17 @@ rpm(
         "https://mirror.vpsnet.com/fedora/linux/updates/32/Everything/x86_64/Packages/k/kernel-core-5.11.10-100.fc32.x86_64.rpm",
         "https://ftp.byfly.by/pub/fedoraproject.org/linux/updates/32/Everything/x86_64/Packages/k/kernel-core-5.11.10-100.fc32.x86_64.rpm",
         "https://ftp.lysator.liu.se/pub/fedora/linux/updates/32/Everything/x86_64/Packages/k/kernel-core-5.11.10-100.fc32.x86_64.rpm",
+    ],
+)
+
+rpm(
+    name = "kernel-modules-0__5.11.10-100.fc32.x86_64",
+    sha256 = "c48e7dda229469afc7fd09310fcf52181a48e4433199d9e1dbd449cbb64180d5",
+    urls = [
+        "https://ftp.fau.de/fedora/linux/updates/32/Everything/x86_64/Packages/k/kernel-modules-5.11.10-100.fc32.x86_64.rpm",
+        "https://mirror.23media.com/fedora/linux/updates/32/Everything/x86_64/Packages/k/kernel-modules-5.11.10-100.fc32.x86_64.rpm",
+        "https://mirror.dogado.de/fedora/linux/updates/32/Everything/x86_64/Packages/k/kernel-modules-5.11.10-100.fc32.x86_64.rpm",
+        "https://ftp.halifax.rwth-aachen.de/fedora/linux/updates/32/Everything/x86_64/Packages/k/kernel-modules-5.11.10-100.fc32.x86_64.rpm",
     ],
 )
 
@@ -3317,17 +3328,6 @@ rpm(
         "https://mirrors.dotsrc.org/fedora-buffet/fedora/linux/updates/32/Everything/x86_64/Packages/l/libguestfs-1.44.0-1.fc32.x86_64.rpm",
         "https://ftp.acc.umu.se/mirror/fedora/linux/updates/32/Everything/x86_64/Packages/l/libguestfs-1.44.0-1.fc32.x86_64.rpm",
         "https://ftp.lip6.fr/ftp/pub/linux/distributions/fedora/updates/32/Everything/x86_64/Packages/l/libguestfs-1.44.0-1.fc32.x86_64.rpm",
-    ],
-)
-
-rpm(
-    name = "libguestfs-tools-1__1.44.0-1.fc32.x86_64",
-    sha256 = "29c3f7a36cbffe3e87032ffa60534f7a27e28af6aaa35da7e587721569788917",
-    urls = [
-        "https://mirror.karneval.cz/pub/linux/fedora/linux/updates/32/Everything/x86_64/Packages/l/libguestfs-tools-1.44.0-1.fc32.noarch.rpm",
-        "https://mirrors.dotsrc.org/fedora-buffet/fedora/linux/updates/32/Everything/x86_64/Packages/l/libguestfs-tools-1.44.0-1.fc32.noarch.rpm",
-        "https://ftp.acc.umu.se/mirror/fedora/linux/updates/32/Everything/x86_64/Packages/l/libguestfs-tools-1.44.0-1.fc32.noarch.rpm",
-        "https://ftp.lip6.fr/ftp/pub/linux/distributions/fedora/updates/32/Everything/x86_64/Packages/l/libguestfs-tools-1.44.0-1.fc32.noarch.rpm",
     ],
 )
 
@@ -4368,17 +4368,6 @@ rpm(
 )
 
 rpm(
-    name = "libverto-libevent-0__0.3.0-9.fc32.x86_64",
-    sha256 = "7a865b390748c0e45c9c53e19927d32330e75d0d3960c03dbd0f3de3da15990a",
-    urls = [
-        "https://ftp-stud.hs-esslingen.de/pub/fedora/linux/releases/32/Everything/x86_64/os/Packages/l/libverto-libevent-0.3.0-9.fc32.x86_64.rpm",
-        "https://mirror.dogado.de/fedora/linux/releases/32/Everything/x86_64/os/Packages/l/libverto-libevent-0.3.0-9.fc32.x86_64.rpm",
-        "https://ftp.fau.de/fedora/linux/releases/32/Everything/x86_64/os/Packages/l/libverto-libevent-0.3.0-9.fc32.x86_64.rpm",
-        "https://mirror.23media.com/fedora/linux/releases/32/Everything/x86_64/os/Packages/l/libverto-libevent-0.3.0-9.fc32.x86_64.rpm",
-    ],
-)
-
-rpm(
     name = "libvirt-bash-completion-0__6.6.0-13.fc32.x86_64",
     sha256 = "0ce8da7305bc3106abe5a3f183abbffe744e72639fd06a3e5236866531f5b872",
     urls = [
@@ -4932,10 +4921,10 @@ rpm(
     name = "mandoc-0__1.14.5-12.fc32.x86_64",
     sha256 = "a77f9a15b5e0e384063ba5f90b7e4f6c20ebceca15a6939f1d43adebd7d560de",
     urls = [
-        "https://ftp.byfly.by/pub/fedoraproject.org/linux/updates/32/Everything/x86_64/Packages/m/mandoc-1.14.5-12.fc32.x86_64.rpm",
-        "https://fedora.cu.be/linux/updates/32/Everything/x86_64/Packages/m/mandoc-1.14.5-12.fc32.x86_64.rpm",
-        "https://ftp.lysator.liu.se/pub/fedora/linux/updates/32/Everything/x86_64/Packages/m/mandoc-1.14.5-12.fc32.x86_64.rpm",
-        "https://mirrors.uni-ruse.bg/fedora/linux/updates/32/Everything/x86_64/Packages/m/mandoc-1.14.5-12.fc32.x86_64.rpm",
+        "https://ftp.halifax.rwth-aachen.de/fedora/linux/updates/32/Everything/x86_64/Packages/m/mandoc-1.14.5-12.fc32.x86_64.rpm",
+        "https://mirror.23media.com/fedora/linux/updates/32/Everything/x86_64/Packages/m/mandoc-1.14.5-12.fc32.x86_64.rpm",
+        "https://ftp.fau.de/fedora/linux/updates/32/Everything/x86_64/Packages/m/mandoc-1.14.5-12.fc32.x86_64.rpm",
+        "https://mirror.dogado.de/fedora/linux/updates/32/Everything/x86_64/Packages/m/mandoc-1.14.5-12.fc32.x86_64.rpm",
     ],
 )
 
@@ -6192,17 +6181,6 @@ rpm(
 )
 
 rpm(
-    name = "perl-Sys-Guestfs-1__1.44.0-1.fc32.x86_64",
-    sha256 = "9b673becffb5506d541beed923309e20e417a763ea5ffdd56a2499dea01c2d00",
-    urls = [
-        "https://mirror.karneval.cz/pub/linux/fedora/linux/updates/32/Everything/x86_64/Packages/p/perl-Sys-Guestfs-1.44.0-1.fc32.x86_64.rpm",
-        "https://mirrors.dotsrc.org/fedora-buffet/fedora/linux/updates/32/Everything/x86_64/Packages/p/perl-Sys-Guestfs-1.44.0-1.fc32.x86_64.rpm",
-        "https://ftp.acc.umu.se/mirror/fedora/linux/updates/32/Everything/x86_64/Packages/p/perl-Sys-Guestfs-1.44.0-1.fc32.x86_64.rpm",
-        "https://ftp.lip6.fr/ftp/pub/linux/distributions/fedora/updates/32/Everything/x86_64/Packages/p/perl-Sys-Guestfs-1.44.0-1.fc32.x86_64.rpm",
-    ],
-)
-
-rpm(
     name = "perl-Term-ANSIColor-0__5.01-2.fc32.ppc64le",
     sha256 = "5faeaff5ad78dbe6dde7aff1fd548df6eefa051e8126d67f25053cb833102ae9",
     urls = [
@@ -6371,17 +6349,6 @@ rpm(
 )
 
 rpm(
-    name = "perl-hivex-0__1.3.18-21.fc32.1.x86_64",
-    sha256 = "2ca3e13c0cf74d9168dac9d00216e7181c940f39f92b4466898e77b75c69d79a",
-    urls = [
-        "https://ftp.fau.de/fedora/linux/releases/32/Everything/x86_64/os/Packages/p/perl-hivex-1.3.18-21.fc32.1.x86_64.rpm",
-        "https://ftp-stud.hs-esslingen.de/pub/fedora/linux/releases/32/Everything/x86_64/os/Packages/p/perl-hivex-1.3.18-21.fc32.1.x86_64.rpm",
-        "https://mirror.23media.com/fedora/linux/releases/32/Everything/x86_64/os/Packages/p/perl-hivex-1.3.18-21.fc32.1.x86_64.rpm",
-        "https://ftp.wrz.de/pub/fedora/linux/releases/32/Everything/x86_64/os/Packages/p/perl-hivex-1.3.18-21.fc32.1.x86_64.rpm",
-    ],
-)
-
-rpm(
     name = "perl-interpreter-4__5.30.3-460.fc32.ppc64le",
     sha256 = "550a1b4a759a78c227d0c513899bdc76ab84eda8b5cc62db2ac2bcd952417770",
     urls = [
@@ -6400,17 +6367,6 @@ rpm(
         "https://mirrors.dotsrc.org/fedora-buffet/fedora/linux/updates/32/Everything/x86_64/Packages/p/perl-interpreter-5.30.3-460.fc32.x86_64.rpm",
         "https://ftp.acc.umu.se/mirror/fedora/linux/updates/32/Everything/x86_64/Packages/p/perl-interpreter-5.30.3-460.fc32.x86_64.rpm",
         "https://ftp.lip6.fr/ftp/pub/linux/distributions/fedora/updates/32/Everything/x86_64/Packages/p/perl-interpreter-5.30.3-460.fc32.x86_64.rpm",
-    ],
-)
-
-rpm(
-    name = "perl-libintl-perl-0__1.31-5.fc32.x86_64",
-    sha256 = "2212cb3b7e3bd7c238bebb1d9fff36cddac79fc35c4e53c1550eb35eb10a1e56",
-    urls = [
-        "https://ftp.fau.de/fedora/linux/releases/32/Everything/x86_64/os/Packages/p/perl-libintl-perl-1.31-5.fc32.x86_64.rpm",
-        "https://ftp-stud.hs-esslingen.de/pub/fedora/linux/releases/32/Everything/x86_64/os/Packages/p/perl-libintl-perl-1.31-5.fc32.x86_64.rpm",
-        "https://mirror.23media.com/fedora/linux/releases/32/Everything/x86_64/os/Packages/p/perl-libintl-perl-1.31-5.fc32.x86_64.rpm",
-        "https://ftp.wrz.de/pub/fedora/linux/releases/32/Everything/x86_64/os/Packages/p/perl-libintl-perl-1.31-5.fc32.x86_64.rpm",
     ],
 )
 

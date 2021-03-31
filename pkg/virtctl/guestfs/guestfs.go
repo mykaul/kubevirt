@@ -23,8 +23,10 @@ import (
 )
 
 const (
-	defaultImage = "registry:5000/libguestfs-tools"
-	// KvmDevice defines the resource as in pkg/virt-controller/services/template.go, but we avoid to import the package to avoid compile compile conflicts when the os is windows
+	defaultRegistry  = "quay.io/kubevirt"
+	defaultImageName = "libguestfs-tools"
+	defaultTag       = "latest"
+	// KvmDevice defines the resource as in pkg/virt-controller/services/template.go, but we don't import the package to avoid compile compile conflicts when the os is windows
 	KvmDevice = "devices.kubevirt.io/kvm"
 )
 
@@ -52,7 +54,7 @@ func NewGuestfsShellCommand(clientConfig clientcmd.ClientConfig) *cobra.Command 
 	}
 	cmd.PersistentFlags().StringVarP(&pvc, "pvc", "p", "", "pvc claim name")
 	cmd.MarkPersistentFlagRequired("pvc")
-	cmd.PersistentFlags().StringVarP(&image, "image", "i", defaultImage, fmt.Sprintf("overwrite default container image"))
+	cmd.PersistentFlags().StringVarP(&image, "image", "i", fmt.Sprintf("%s/%s:%s", defaultRegistry, defaultImageName, defaultTag), fmt.Sprintf("overwrite default container image"))
 	cmd.SetUsageTemplate(templates.UsageTemplate())
 	return cmd
 }
@@ -257,6 +259,9 @@ func (client *K8sClient) getPodsForPVC(pvcName, ns string) ([]corev1.Pod, error)
 
 func createLibguestfsPod(pvc, image, cmd string, args []string, kvm, isBlock bool) *corev1.Pod {
 	var resources corev1.ResourceRequirements
+	var user, group int64
+	user = 0
+	group = 0
 	if kvm {
 		resources = corev1.ResourceRequirements{
 			Limits: corev1.ResourceList{
@@ -291,6 +296,10 @@ func createLibguestfsPod(pvc, image, cmd string, args []string, kvm, isBlock boo
 							Name:  "LIBGUESTFS_BACKEND",
 							Value: "direct",
 						},
+					},
+					SecurityContext: &corev1.SecurityContext{
+						RunAsUser:  &user,
+						RunAsGroup: &group,
 					},
 					ImagePullPolicy: corev1.PullAlways,
 					Stdin:           true,

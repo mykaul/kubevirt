@@ -68,6 +68,13 @@ bazel run \
     iptables \
     tar
 
+bazel run \
+    --config=${ARCHITECTURE} \
+    //:bazeldnf -- rpmtree --public --name libguestfs-tools \
+    $basesystem \
+    libguestfs \
+    libguestfs-tools
+
 # remove all RPMs which are no longer referenced by a rpmtree
 bazel run \
     --config=${ARCHITECTURE} \

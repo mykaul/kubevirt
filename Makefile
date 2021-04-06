@@ -30,6 +30,11 @@ bazel-build-images:
 bazel-push-images:
 	hack/dockerized "hack/bazel-fmt.sh && DOCKER_PREFIX=${DOCKER_PREFIX} DOCKER_TAG=${DOCKER_TAG} DOCKER_TAG_ALT=${DOCKER_TAG_ALT} IMAGE_PREFIX=${IMAGE_PREFIX} IMAGE_PREFIX_ALT=${IMAGE_PREFIX_ALT} KUBEVIRT_PROVIDER=${KUBEVIRT_PROVIDER} PUSH_TARGETS='${PUSH_TARGETS}' ./hack/bazel-push-images.sh"
 
+generate-libguestfs-appliance:
+	docker build --rm -t gf-appliances -f hack/libguestfs/Dockerfile .
+	docker create --name gs-appliance gs-appliance sh
+	docker cp gs-appliance:/appliance/ cmd/libguestfs/
+
 push: bazel-push-images
 
 bazel-test:
